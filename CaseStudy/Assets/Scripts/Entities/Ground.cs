@@ -18,6 +18,11 @@ public class Ground : MonoBehaviour
 
     private void OnCollisionExit(Collision other) 
     {
-            
+        IKillable ikillable=other.gameObject.GetComponent<IKillable>();
+        if(ikillable!=null)
+        {
+            //add animation
+            ikillable.Die();
+        }
     }
 }
